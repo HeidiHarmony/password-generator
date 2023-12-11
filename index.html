@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/iey3xqj.css">
+
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Let's Generate a Password!</h2>
+        </div>
+        <div id="criteria">
+
+          <!--user's choices captured in this form
+          Div to hold the form, fieldset and legend to group the form elements, dropdown for 8-128 (maybe generate with a loop?), a checkbox element to show which of our character types are needed, and the generate button -->
+         
+        <form>
+<!--user selects how many characters the password should consist of-->
+           <p class="prompt"> <label for="num-characters">How many characters?</label></p>
+           <label for="user-criteria"> minimum 8, maximum 128</label> <br />
+          <input type="number" id="user-criteria" name="user-criteria" min="8" max="128" step="1">
+         
+<!--user selects which character types to include-->
+          <p id="which-types" class="prompt">Select character types to include:</p>
+
+          <p><input type="checkbox" id="uppercase-letters" name="uppercase-letters" value="UPPERCASE Letters">
+          <label for="uppercase-letters">UPPERCASE Letters</label></p>
+
+          <p><input type="checkbox" id="lowercase-letters" name="lowercase-letters" value="lowercase Letters">
+          <label for="lowercase-letters">lowercase Letters</label></p>
+
+          <p><input type="checkbox" id="numeric" name="numeric" value="Numbers">
+          <label for="numeric">Numbers</label></p>
+
+         <p><input type="checkbox" id="special-characters" name="special-characters" value="Special Characters">
+         <label for="special-characters">Special Characters</label></p>
+
+        </form>
+      </div>
+        
+      <div class="card-footer">
+          <!--The button element has the ID being searched for-->
+          <button type="button" id="generate" class="btn" onclick="">Generate Password</button>
+      </div>
+
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
