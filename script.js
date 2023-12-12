@@ -74,6 +74,8 @@ console.log(alphaLowerArray);
 console.log(numericArray);
 console.log(fullCharacterTypesArray);
 
+// chosenCharacter = 
+
 //TEST POINT
 
 /*
