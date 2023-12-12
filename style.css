@@ -112,10 +112,6 @@ h1 {
   cursor: pointer;
 }
 
-button[disabled] {
-  cursor: default;
-  background: #c0c7cf;
-}
 
 .float-right {
   float: right;
