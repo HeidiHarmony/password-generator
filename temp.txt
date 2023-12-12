@@ -1,0 +1,12 @@
+function generateSpecialCharacters () {
+
+  const startCodePoint = 33; // Starting code point for special characters 
+  const endCodePoint = 126; // Ending code point for special characters 
+  const specialCharacters = [];
+
+  //Returns the entire array as the definition of the specialCharacters constant that called the function
+  for  (let codePoint = startCodePoint; codePoint <= endCodePoint; codePoint++) 
+    { const character = String.fromCodePoint(codePoint); specialCharacters.push(character); 
+    }
+    return specialCharacters; 
+}

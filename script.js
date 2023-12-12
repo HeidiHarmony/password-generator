@@ -1,10 +1,10 @@
 //Variables
 
-let userHowMany = document.getElementById ("num-characters");
 let userUpper = document.getElementById ("uppercase-letters");
 let userLower = document.getElementById ("lowercase-letters");
 let userNumeric = document.getElementById ("numeric");
 let userSpecial = document.getElementById ("special-charcters");
+
 
 //Constants
 
@@ -12,11 +12,35 @@ const alphaUpperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", 
 
 const alphaLowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
-const numericArray = [0, 1, 2,3, 4, 5, 6, 7, 8, 9];
+const numericArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const specialCharArray = ['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~'];
 
+let userHowMany;
 
+while (!userHowMany) {
+  displayMessage("Please enter a number:");
+ 
+    userHowMany = null; }
+    userHowMany = document.querySelector("num-characters").value;
+
+
+console.log(userHowMany);
+
+userHowMany.addEventListener('input', digitsValidate);
+userHowMany.addEventListener('blur', digitsValidate);
+
+function digitsValidate (userHowMany) {
+ 
+  let userHowManyType = typeof userHowMany;
+
+  if (userHowMany < 8 || userHowMany > 128) {
+    displayMessage("The chosen number is out of range. Please choose a whole number from 8 to 128"); }
+  if (userHowMany === "") {
+      displayMessage("Cannot be left blank"); }
+   if (!userHowMany || isNaN(userHowMany)) {
+        displayMessage("Invalid input. Please enter a valid number.");
+}}
 
 function characterTypes() {
 
@@ -51,11 +75,6 @@ console.log(numericArray);
 console.log(fullCharacterTypesArray);
 
 //TEST POINT
-
-
-
-
-
 
 /*
 // Write password to the #password input
